@@ -1,6 +1,6 @@
 # PyTorch-Image-Classifier
 
-A basic dense nerual network implemented with PyTorch to classify images in this flower dataset https://archive.ics.uci.edu/ml/datasets/iris
+A basic dense neural network implemented with PyTorch to classify images in this flower dataset https://archive.ics.uci.edu/ml/datasets/iris
 
 Required libraries: argparse numpy Pillow torch torchvision
 

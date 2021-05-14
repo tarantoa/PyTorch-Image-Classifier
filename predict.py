@@ -20,8 +20,6 @@ parser.add_argument("-c", "--category_names", help = "Category names", required 
 
 argument = parser.parse_args()
 
-
-
 # Assign defaults
 top_k = 3
 
@@ -34,11 +32,9 @@ if argument.top_k:
     top_k = argument.top_k
 
 # Open labels map
-category_names = None
+category_names = 'cat_to_name.json'
 if argument.category_names:
     cateogry_names = argument.category_names
-else:
-    category_names = 'cat_to_name.json'
 with open(category_names, 'r') as f:
     label_map = json.load(f)
     
@@ -52,7 +48,7 @@ elif checkpoint['arch'] == 'alexnet':
 elif checkpoint['arch'] == 'googlenet':
     model = models.googlenet(pretrained=True)
 
-# Prevent weights form being updated
+# Prevent weights from being updated
 for param in model.parameters():
     param.requires_grad = False
     
@@ -90,8 +86,8 @@ image = image.crop((left_margin, bottom_margin, right_margin, top_margin)) # cro
 
 # Normalize values
 image = np.array(image)/255 # scale color channel values
-mean = [0.485, 0.456, 0.406]
-std = [0.229, 0.224, 0.225]
+mean = [0.485, 0.456, 0.406] # magic numbers
+std = [0.229, 0.224, 0.225] # magic numbers
 image = (image - mean) / std
 
 image = image.transpose((2, 0, 1))

@@ -1,16 +1,14 @@
-import argparse, sys
+import argparse
 import json
-import copy
 import time
-import numpy as np
-from PIL import Image
 
 import torch
 from torch import nn, optim
 import torch.nn.functional as F
-from torch.autograd import Variable
 from torchvision import datasets, models, transforms
+from PIL import ImageFile
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 parser = argparse.ArgumentParser()
 
 # Define positonal arguments

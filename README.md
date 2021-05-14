@@ -39,5 +39,5 @@ Optional arguments:
 ```
 -k, --top_k specify the number of category predictions to show (3 ny default)
 -g, --gpu make predictions using the gpu (disabled by default)
--c, --category_names path to json file containing the numerical mapping of category names
+-c, --category_names path to json file specifying the map of category numbers to names (cat_to_names.json by default)
 ```

@@ -46,7 +46,7 @@ image_06743
 ```
 ### Optional arguments
 ```
--k, --top_k specify the number of category predictions to show (3 ny default)
+-k, --top_k specify the number of category predictions to show (3 by default)
 -g, --gpu make predictions using the gpu (disabled by default)
 -c, --category_names path to json file specifying the map of category numbers to names (cat_to_names.json by default)
 ```
